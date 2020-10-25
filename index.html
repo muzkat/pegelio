@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pegel.io - Coming Soon!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 50px;
+            background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+            /* Chrome 10+, Saf5.1+ */
+
+            background: -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+            /* FF3.6+ */
+
+            background: -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+            /* IE10 */
+
+            background: -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+            /* Opera 11.10+ */
+
+            background: linear-gradient(90deg, #43cea2 10%, #185a9d 90%);
+            /* W3C */
+        }
+
+        .alpha {
+            opacity: 0.5;
+            cursor: crosshair;
+        }
+
+        a, a:hover, a:active, a:visited{
+            width: 500px;
+            font: bold 36px sans-serif;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: -1px;
+            color: #333;
+            text-decoration: none;
+            cursor: crosshair;
+        }
+
+
+        h1 {
+            width: 500px;
+            font: bold 36px sans-serif;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: -1px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            bottom: auto;
+            right: auto;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .inner {
+            background: #FFF;
+            position: relative;
+            padding: 7px;
+            text-transform: uppercase;
+        }
+    </style>
+    <script>
+        var iFrequency = 5000; // expressed in miliseconds
+        var myInterval = 400;
+        var last = 'fa-ship';
+        var next = 'fa-rocket';
+
+        // STARTS and Resets the loop if any
+        function startLoop() {
+            if (myInterval > 0) clearInterval(myInterval);  // stop
+            myInterval = setInterval("doSomething()", iFrequency);  // run
+        }
+
+        function doSomething() {
+            var element = document.getElementById("fa");
+            var intermed = next;
+            element.classList.remove(last);
+            element.classList.add(next);
+            next = last;
+            last = intermed;
+        }
+
+        startLoop();
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>
+        <span class="wrap">
+            <span class="inner">We Are Launching</span>
+        </span>
+    </h1>
+    <h1>
+        <span class="wrap">
+            <span class="inner">Spring 2018 <span id="fa" class="fa fa-ship" aria-hidden="true"></span></span>
+        </span>
+    </h1>
+    <h1>
+        <span class="wrap">
+            <span class="inner">pegel.io</span>
+        </span>
+    </h1>
+    <br><br>
+    <h1>
+        <span class="wrap">
+            <span class="inner alpha"><a href="http://next.pegel.io">next</a></span>
+        </span>
+    </h1>
+</div>
+</body>
+</html>
